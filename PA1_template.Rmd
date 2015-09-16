@@ -80,7 +80,7 @@ First create a new column in the completed data frame from the previous step. Th
 
 ```{r echo=TRUE}
 df_completed["day"] <- weekdays(as.Date(df_completed$date))
-df_completed$day[df_completed$day %in% c("ñóááîòà", "âîñêðåñåíüå", "Saturday", "Sunday")] <- "weekend"
+df_completed$day[df_completed$day %in% c("ÑÑƒÐ±Ð±Ð¾Ñ‚Ð°", "Ð²Ð¾ÑÐºÑ€ÐµÑÐµÐ½ÑŒÐµ", "Saturday", "Sunday")] <- "weekend"
 df_completed$day[df_completed$day != "weekend"] <- "weekday"
 weekday_ia <- aggregate(steps[day == "weekday"] ~ interval[day == "weekday"], data = df_completed, FUN = mean)
 weekend_ia <- aggregate(steps[day == "weekend"] ~ interval[day == "weekend"], data = df_completed, FUN = mean)
